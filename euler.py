@@ -33,5 +33,14 @@ class ProjectEuler:
 			prev_2 = i
 		return fib_sum
 
+
+	# The prime factors of 13195 are 5, 7, 13 and 29.
+	# What is the largest prime factor of the number 600851475143 ?
+	def problem_3(self, source_num):
+		dividor = 1
+
+
+
 x = ProjectEuler()
-print x.problem_2(4000000) 
+print x.problem_3(13195) 
+print sqrt(337)
