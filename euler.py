@@ -1,6 +1,10 @@
-import pdb
+import math
+from math_helper import Helper
+
 
 class ProjectEuler: 
+
+	# def __init__(self):
 
 	# Problem 1: If we list all the natural numbers below 10 that are multiples
 	# of 3 or 5, we get 3, 5, 6 and 9. The sum of these multiples is 23.
@@ -36,11 +40,68 @@ class ProjectEuler:
 
 	# The prime factors of 13195 are 5, 7, 13 and 29.
 	# What is the largest prime factor of the number 600851475143 ?
-	def problem_3(self, source_num):
-		dividor = 1
+	def problem_3(self, n):
+		d = int(math.ceil(n / 2))
+		while(d > 1):
+			if n % d == 0 and Helper.is_prime(d):
+				return d
+			d -= 1
+			print d 
+		return d
+
+	def problem_3_better(self, n):
+		c = 2
+		while(c < n):
+			if c % n == 0:
+				r = n / c
+				if Helper.is_prime(r):
+					return r
+			c += 1
+		return c
+
+	def problem_3_other(self, n):
+		f = [1]
+		x = n 
+		while Helper.get_product(f) != n:
+			d = Helper.first_divisor(x)
+			f.append(d)
+			x = x / d 
+		return f
 
 
 
-x = ProjectEuler()
-print x.problem_3(13195) 
-print sqrt(337)
+
+# A palindromic number reads the same both ways. The largest palindrome made from 
+# the product of two 2-digit numbers is 9009 equals 91 times 99.
+# Find the largest palindrome made from the product of two 3-digit numbers.
+	def problem_4(self, s):
+		largest = 0
+		while len(str(s)) < 4:
+			i = 100
+			while len(str(i)) < len(str(s)) + 1:
+				m = i * s
+				if Helper.is_palendrome(m) and m > largest:
+					largest = m 
+				i+=1
+			s+=1
+		return largest
+
+
+euler = ProjectEuler()
+
+# print Helper.is_prime(13395 / 39)
+# print euler.problem_3_other(600851475143)
+# print euler.problem_3_other(834579)
+# print x
+# print Helper.get_product([1,5,12,123])
+
+print Helper.is_prime(1973)
+
+
+# python -m pbd myscript.py
+# pbd myscript.py
+
+#  c continue
+#  n next
+#  s step through 
+
