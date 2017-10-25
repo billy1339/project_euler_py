@@ -87,15 +87,30 @@ class ProjectEuler:
 		return largest
 
 
-euler = ProjectEuler()
+# 2520 is the smallest number that can be divided by each of the numbers from 1 to 10 without any remainder.
+# What is the smallest positive number that is evenly divisible by all of the numbers from 1 to 20?
+	def problem_5(self, n):
+		c = 2
+		s = 2
+		while c <= n:
+			if s % c == 0:
+				c += 1
+			else: 
+				c = 2
+				s += 1
+		return s 
 
+
+
+euler = ProjectEuler()
+print euler.problem_5(20)
 # print Helper.is_prime(13395 / 39)
 # print euler.problem_3_other(600851475143)
 # print euler.problem_3_other(834579)
 # print x
 # print Helper.get_product([1,5,12,123])
 
-print Helper.is_prime(1973)
+#print Helper.is_prime(1973)
 
 
 # python -m pbd myscript.py
