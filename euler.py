@@ -101,9 +101,19 @@ class ProjectEuler:
 		return s 
 
 
+# The sum of the squares of the first ten natural numbers is,
+# 12 + 22 + ... + 102 = 385
+# The square of the sum of the first ten natural numbers is,
+# (1 + 2 + ... + 10)2 = 552 = 3025
+# Hence the difference between the sum of the squares of the first ten natural numbers and the square of the sum is 3025 minus 385 equals 2640.
+# Find the difference between the sum of the squares of the first one hundred natural numbers and the square of the sum.
+	def problem_6(self, n):
+		x = Helper.sum_of_squares(n)
+		y = Helper.square_of_sum(n)
+		return y - x 
 
 euler = ProjectEuler()
-print euler.problem_5(20)
+print euler.problem_6(100)
 # print Helper.is_prime(13395 / 39)
 # print euler.problem_3_other(600851475143)
 # print euler.problem_3_other(834579)

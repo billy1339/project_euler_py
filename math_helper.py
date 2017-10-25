@@ -37,3 +37,20 @@ class Helper :
 			if n % i == 0:
 				print "divisor"
 				return i
+
+	@staticmethod
+	def square_of_sum(n):
+		s = 0
+		for i in range(1, n + 1):
+			s += i
+		return s * s
+
+
+	@staticmethod
+	def sum_of_squares(n):
+		s = 0
+		for i in range(1, n + 1):
+			s += i * i
+		return s 
+
+
