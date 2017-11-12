@@ -15,7 +15,7 @@ class Helper :
 		return True
 
 	@staticmethod
-	def is_prime(n):
+	def is_prime_depreciated(n):
 		c = 2
 		while(c <= math.ceil(n / 2)):
 			if n % c == 0:
@@ -23,6 +23,22 @@ class Helper :
 			c += 1
 		return True 
 	
+	@staticmethod
+	def is_prime( n ):
+		if n == 2:
+			return True
+		elif n % 2 == 0:
+			return True
+		
+		i = 3
+		range = int( math.sqrt(n) ) + 1
+		while( i < range ):
+			if( n % i == 0):
+				return 0
+			i += 1
+		return 1
+
+
 	@staticmethod
 	def get_product(x):
 		p = 1
